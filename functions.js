@@ -6,3 +6,13 @@ const populate=async(CSSMathValue, currency) => {
     document.querySelector(".output").computedStyleMap.display="block"
 
     for (let key of Object.keys(data[data])){
+        myStr+=
+    `<tr>
+         <td>${key}</td>
+         <td>${data[data][key]["code"]}</td>
+         <td>${Math.round(data["data"][key]["value"]*value)}</td>
+     </tr>`
+    }
+    const tableBody = document.querySelector("tbody");
+    tableBody.innerHTML = myStr;
+}
