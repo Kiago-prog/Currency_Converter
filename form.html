@@ -3,19 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Exchange Rates</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="#">
-        <label for="fromWhichCurrency">From:</label><br>
-        <input type="dropdown" id="from" name="from" value=""><br>
-        <label for="toWhichCurrency">To:</label><br>
-        <input type="dropdown" id="To" name="To" value=""><br>
-        <label for="amount">Amount:</label><br>
-        <input type="number" id="Amt"><br>
+    <div>
+        <h1>Exchange Rates</h1>
+        <p>Select a currency to convert from and to, and enter the amount.</p>
+
+        <form id="CurrencyForm" action="/action.php" method="get">
+        <label for="Amount">Enter The Amount:</label><br>
+        <input type="number" id="amount" name="from" placeholder="Enter Amount"><br>
+        <select name="currency" aria-placeholder="Please select the currency" id="selector">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="JPY">JPY</option>
+            <option value="CAD">CAD</option>
+            <option value="AUD">AUD</option>
+            <option value="CHF">CHF</option>
+            <option value="CNY">CNY</option>
+            <option value="INR">INR</option>
+            <option value="MXN">MXN</option>
+            <option value="RUB">RUB</option>
+            <option value="TRY">TRY</option>
+            <option value="ZAR">ZAR</option>
+            <option value="BRL">BRL</option>
+            <option value="NOK">NOK</option>
+            <option value="SEK">SEK</option>
+        </select><br/>
         <input type="submit" value="Submit">
         </form>
+     </div>
+     
 
 
 <script src="functions.js"></script>
