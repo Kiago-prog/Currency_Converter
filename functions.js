@@ -1,6 +1,6 @@
 
 const currencySelects = document.querySelectorAll("select");
-const apiKey = "your_api_key_here";
+const apiKey = "https://api.currencyapi.com/v3/latest?apikey=cur_live_7UStkUqQNBmahSoy8K635tE3Sjr5fK1UVPmVloZ2&base_currency=";
 const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
 
 async function loadCurrencies() {
