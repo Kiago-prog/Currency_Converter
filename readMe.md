@@ -14,9 +14,11 @@ Install dependencies If it's a Node.js project:
 
 
 Authors
-Contributors names and contact info:
+Contributors names and contact info and for further assistance:
 Roy Kiago
-Email:```roy.kiago@student.moringaschool.com```
+## Email
+```roy.kiago@student.moringaschool.com```
+
 
 Kiago-prog
 
