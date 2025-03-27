@@ -1,41 +1,39 @@
-const populate = async (value, currency) => {
-    let myStr = "";
-    let URL = `https://api.currencyapi.com/v3/latest?apikey=cur_live_7UStkUqQNBmahSoy8K635tE3Sjr5fK1UVPmVloZ2&base_currency=${currency}`;
 
-    try {
-        let response = await fetch(URL);
-        if (!response.ok) {
-            throw new Error("Failed to fetch data");
-        }
+const currencySelects = document.querySelectorAll("select");
+const apiKey = "your_api_key_here";
+const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
 
-        let data = await response.json();
+async function loadCurrencies() {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    const currencies = Object.keys(data.conversion_rates);
+    
+    currencySelects.forEach(select => {
+        currencies.forEach(currency => {
+            let option = document.createElement("option");
+            option.value = currency;
+            option.textContent = currency;
+            select.appendChild(option);
+        });
+    });
+}
 
-        // Show the output section
-        document.querySelector(".output").style.display = "block";
-
-        // Loop through exchange rate data
-        for (let key of Object.keys(data.data)) {
-            myStr += `
-            <tr>
-                <td>${key}</td>
-                <td>${data.data[key].code}</td>
-                <td>${Math.round(data.data[key].value * value)}</td>
-            </tr>`;
-        }
-
-        // Update the table body
-        const tableBody = document.querySelector("tbody");
-        tableBody.innerHTML = myStr;
-    } catch (error) {
-        console.error("Error:", error);
+async function convertCurrency() {
+    let amount = document.getElementById("amount").value;
+    let fromCurrency = document.getElementById("fromCurrency").value;
+    let toCurrency = document.getElementById("toCurrency").value;
+    
+    if (amount === "" || isNaN(amount)) {
+        alert("Please enter a valid amount");
+        return;
     }
-};
+    
+    const response = await fetch(`https://v6.exchangerate-api.com/v6/${apiKey}/latest/${fromCurrency}`);
+    const data = await response.json();
+    const rate = data.conversion_rates[toCurrency];
+    const convertedAmount = (amount * rate).toFixed(2);
+    
+    document.getElementById("result").textContent = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
+}
 
-// Add event listener to the button
-const btn = document.querySelector(".btn");
-btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    const value = parseInt(document.querySelector("input[name='quantity']").value);
-    const currency = document.querySelector("select[name='currency']").value;
-    populate(value, currency);
-});
+loadCurrencies();
