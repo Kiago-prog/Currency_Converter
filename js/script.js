@@ -26,3 +26,12 @@ function loadFlag(element){
       }
   }
 }
+
+window.addEventListener("load", ()=>{
+  getExchangeRate();
+});
+
+getButton.addEventListener("click", e =>{
+  e.preventDefault(); //preventing form from submitting
+  getExchangeRate();
+});
