@@ -1,10 +1,8 @@
-## RAMEN EATER
+## REAL TIME CURRENCY CONVERTER
 Used to rate different types of ramen.
 
 ## Description
-This website describes some dishes with their ratings and comments from people
-
-Clone the repository
+This is a mini project which promts the user to enter a specific amount in a currency of their choice and it allows them to convert the amount to the equivalent amount in another currency of the users choice.
 
 ## bash
 Copy code
@@ -13,32 +11,12 @@ Copy code
 ```
 Install dependencies If it's a Node.js project:
 
-## bash
-Copy code
-cd project-name
-```
-npm install
-```
-Or if it's a Python project:
 
-## bash
-Copy code
-```
-cd project-name
-```
-```
-pip install -r requirements.txt
-```
-For Node.js:
-
-bash
-Copy code
-```
-npm start
-```
 
 Authors
-Contributors names and contact info
+Contributors names and contact info:
+Roy Kiago
+Email:```roy.kiago@student.moringaschool.com```
 
 Kiago-prog
 
