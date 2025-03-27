@@ -1,42 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exchange Rates</title>
-    <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Currency Converter</title>
+        <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-        <h1>Exchange Rates</h1>
-        <p>Select a currency to convert from and to, and enter the amount.</p>
-
-        <form id="CurrencyForm" action="/action.php" method="get">
-        <label for="Amount">Enter The Amount:</label><br>
-        <input type="number" id="amount" name="from" placeholder="Enter Amount in KES"><br>
-         <select name="currency" aria-placeholder="Please select the currency" id="selector"> <!--used to display different types of currencies --> 
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="GBP">GBP</option>
-            <option value="JPY">JPY</option>
-            <option value="CAD">CAD</option>
-            <option value="AUD">AUD</option>
-            <option value="CHF">CHF</option>
-            <option value="CNY">CNY</option>
-            <option value="INR">INR</option>
-            <option value="MXN">MXN</option>
-            <option value="RUB">RUB</option>
-            <option value="TRY">TRY</option>
-            <option value="ZAR">ZAR</option>
-            <option value="BRL">BRL</option>
-            <option value="NOK">NOK</option>
-            <option value="SEK">SEK</option>
-        </select><br/>
-        <input type="submit" value="Submit">
-        </form>
-     </div>
-
-
+    <div class="container">
+        <h2>Currency Converter</h2>
+        <input type="number" id="amount" placeholder="Enter amount" />
+        <select id="fromCurrency"></select>
+        <select id="toCurrency"></select>
+        <button onclick="convertCurrency()">Convert</button>
+        <h3 id="result"></h3>
+    </div>
 
 <script src="functions.js"></script>
 </body>
