@@ -60,3 +60,59 @@ body{
     align-items: center;
     justify-content: space-between;
   }
+  drop-list .select-box{
+    display: flex;
+    width: 175px;
+    height: 45px;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: center;
+    border: 1px solid #999;
+  }
+  .select-box img{
+    max-width: 21px;
+  }
+  .select-box select{
+    width: auto;
+    font-size: 20px;
+    background: none;
+    margin: 0 -5px 0 5px;
+  }
+  .select-box select::-webkit-scrollbar{
+    width: 8px;
+  }
+  .select-box select::-webkit-scrollbar-track{
+    background: #fff;
+  }
+  .select-box select::-webkit-scrollbar-thumb{
+    background: #888;
+    border-radius: 8px;
+    border-right: 2px solid #ffffff;
+  }
+  .drop-list .icon{
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 22px;
+  }
+  form .exchange-rate{
+    border: 1px dotted gray;
+    border-radius: 5px;
+    padding: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+    margin: 20px 0 30px;
+  }
+  form button{
+    height: 52px;
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+    background: #00b4db;
+    transition: all 0.5s;
+  }
+  form button:hover{
+    background: #049bce;
+  
+  }
