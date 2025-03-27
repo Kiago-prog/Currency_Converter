@@ -32,6 +32,16 @@ window.addEventListener("load", ()=>{
 });
 
 getButton.addEventListener("click", e =>{
-  e.preventDefault(); //preventing form from submitting
+  e.preventDefault(); 
   getExchangeRate();
+});
+
+const exchangeIcon = document.querySelector("form .icon");
+exchangeIcon.addEventListener("click", ()=>{
+    let tempCode = fromCurrency.value; // 
+    fromCurrency.value = toCurrency.value; 
+    toCurrency.value = tempCode; 
+    loadFlag(fromCurrency); 
+    loadFlag(toCurrency); 
+    getExchangeRate(); 
 });
